@@ -1,0 +1,97 @@
+html{
+    background-color: #c6dcf5;
+    color: #294566;
+}
+.Content{
+    display: flex;
+    justify-content: center;
+}
+.allmanuals{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+.button{
+    color: #294566;
+}
+.playplace{
+    display: flex;
+    background-color: #96b8e5;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.size{
+    display: none;  
+    justify-content: center;
+    margin-top: 15px;
+}
+.image-button1 {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 10%;
+    background-image: url('images/minus_PNG56.png');
+    background-size: cover;
+  }
+  .image-button2 {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 10%;
+    margin-left: 40px;
+    background-image: url('images/32339.png');
+    background-size: cover;
+  }
+  .accessories1{
+    margin-right: 2%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .accessories2{
+    margin-left: 2%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 7%;
+    margin-bottom: 7%;
+  }
+  .forward{
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-image: url('images/тудын.png');
+    background-size: cover;
+    border-radius: 10%;
+  }
+  .back{
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-image: url('images/сюдын.png');
+    background-size: cover;
+    border-radius: 10%;
+  }
+  .change{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  input{
+    margin-left: 15px;
+  }
+  .exit{
+    margin-left: 20px;
+    color: #294566;
+  }
+  .Rating{
+    display: none;
+  }
+  .InputRaiting{
+    color: #294566;
+    margin-left: 20px;
+  }

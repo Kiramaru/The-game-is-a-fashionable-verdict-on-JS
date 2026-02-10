@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>"Модный приговор"</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="Content">
+            <div class="allmanuals" id="InputRaiting">
+                <h1>Модный приговор</h1>
+                <p class="manual">Для начала работы приложения необходимо загрузить фотографию лица. Затем вы сможете 
+                    передвигать аксессуары с<br> помощью мышки, для этого перетащите выбранный аксессуар на фотографию лица.
+                Затем уже находящиеся <br>на лице аксессуары можно двигать мышкой нажав по ним 2 раза, отцепить их можно нажав 1 раз. 
+                Изменять пропорции можно<br> только фотографии лица. Поворачивать можно только аксессуары с помощью клавиш R и L.
+                Так же с помощью стрелок<br> можно двигать выбранные аксессуары. Категорически запрещается перетаскивать аксессуары за границы 
+                фотографии,<br> вы их убьете. </p>
+                <p><input id="PhotoFace" class="button" type="file" name="photo" accept="image/jpeg,image/png">
+                <input class="button" type="submit" value="Отправить" onclick="Nado()"></p>
+                <div id="Rating" class="Rating">
+                    <p>Оцените игру</p>
+                    <input type="radio" id="contactChoice3" name="contact" value="1"/>
+                    <label for="contactChoice3">1</label>
+                    <input type="radio" id="contactChoice3" name="contact" value="2"/>
+                    <label for="contactChoice3">2</label>
+                    <input type="radio" id="contactChoice3" name="contact" value="3"/>
+                    <label for="contactChoice3">3</label>
+                    <input type="radio" id="contactChoice3" name="contact" value="4"/>
+                    <label for="contactChoice3">4</label>
+                    <input type="radio" id="contactChoice3" name="contact" value="5" aria-checked="true"/>
+                    <label for="contactChoice3">5</label>
+                    <button class="InputRaiting" onclick="shipped()" v-on:click="addEstimate">Отправить</button>
+                    <div>
+                        <p id="Nado222" style="display: none;">Ваша оценка отправлена, перезагрузите страницу чтоб увидеть ее</p>
+                    </div>
+                    <div id="raitingall">
+                        Общий рейтинг:{{ avg }}</div>
+                        <p>Прошлые оценки:</p>
+                        <p v-for="raite in raite" v-if="raite.id > (count - 5)" :key="raite.id">{{ raite.Raiting}}</p>
+                    </div>              
+                </div>
+            </div>
+        </div>
+        <div id="playplace" class="playplace">
+            <div class="accessories1" id="acs1" visible="hidden">
+                <div>
+                    <img src="images/очки1.png" id="glasses" style="width: 200px;">
+                    <div class="change">
+                        <button class="forward" onclick="changeaccessories('glasses', 1)"></button>
+                        <button class="back" onclick="changeaccessories('glasses', 1)"></button>
+                    </div>
+                </div>
+                <div>    
+                    <img src="images/серьги1.png" id="earrings" style="width: 200px;">
+                    <div class="change">
+                        <button class="forward" onclick="changeaccessories('earrings', 2)"></button>
+                        <button class="back" onclick="changeaccessories('earrings', 2)"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="playplace1">
+            </div>
+            <div class="accessories2" id="acs2" visible="hidden">
+                <div>
+                    <img src="images/шарфик1.png" id="scarf" style="width: 200px;">
+                    <div class="change">
+                        <button class="forward" onclick="changeaccessories('scarf', 3)"></button>
+                        <button class="back" onclick="changeaccessories('scarf', 3)"></button>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/шляпа1.png" id="hat" style="width: 200px;">
+                    <div class="change">
+                        <button class="forward" onclick="changeaccessories('hat', 4)"></button>
+                        <button class="back" onclick="changeaccessories('hat', 4)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="size" id="Size">
+            <button class="image-button1" onclick="Minus()"></button>
+            <button class="image-button2" onclick="Plus()"></button>
+            <input type="radio" id="contactChoice1" name="contact" value="identically" onclick="ChangeFlag(0)" checked/>
+            <label for="contactChoice1" onclick="ChangeFlag(0)" >длина и высота</label>
+
+            <input type="radio" id="contactChoice2" name="contact" value="width" onclick="ChangeFlag(1)" />
+            <label for="contactChoice2" onclick="ChangeFlag(1)">длина</label>
+
+            <input type="radio" id="contactChoice3" name="contact" value="height" onclick="ChangeFlag(2)"/>
+            <label for="contactChoice3" onclick="ChangeFlag(2)">высота</label>
+            <button class="exit" onclick="FinalWindow()">Завершить</button>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts.js"></script>
+</html>
